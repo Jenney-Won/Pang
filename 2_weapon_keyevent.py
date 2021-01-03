@@ -98,6 +98,9 @@ while running:
     # 500, 200 -> 180, 160, 140, ... speed값 차이만큼 빼주기
     weapons = [ [w[0], w[1] - weapon_speed] for w in weapons] # 무기 위치를 위로
 
+    # 천장에 닿은 무기 없애기
+    weapons = [ [w[0], w[1]] for w in weapons if w[1] > 0] # 천장에 닿지 않은 것들만
+
     # 4. 충돌 처리
 
     # 5. 화면에 그리기
